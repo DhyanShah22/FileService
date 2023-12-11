@@ -9,6 +9,6 @@ const router = express.Router()
 
 router.post('/login', loginUser)
 
-ReportingObserver.post('/signup', signupUser)
+router.post('/signup', signupUser)
 
 module.exports = router
