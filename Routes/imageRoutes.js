@@ -1,9 +1,16 @@
 const express = require('express')
 const { upload } = require('../upload')
-const { postImage } = require('../Controllers/imageController')
+const {
+    postImage,
+    getImages,
+    updateImage,
+    deleteImage,
+ } = require('../Controllers/imageController')
 
 const router = express.Router()
 
-router.post('/', upload.single("image"), postImage)
-
+router.post('/add', upload.single("image"), postImage)
+router.get('/get/hehe', getImages)
+router.patch('/update/:id', updateImage)
+router.delete('/delete/:id', deleteImage)
 module.exports = router
