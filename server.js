@@ -6,6 +6,7 @@ require('dotenv').config()
 
 const app = express()
 const userRoute = require('./Routes/userRoutes')
+const imageRoute = require('./Routes/imageRoutes')
 
 app.use(express.json())
 app.use(helmet())
@@ -20,6 +21,7 @@ app.get("/api/", (req,res) => {
 })
 
 app.use('/api/user', userRoute)
+app.use('/api/image', imageRoute)
 
 mongoose.connect(process.env.MONG_URI)
     .then(() => {
