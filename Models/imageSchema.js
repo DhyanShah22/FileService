@@ -8,7 +8,13 @@ const imageSchema = mongoose.Schema({
     filepath: {
         type: String,
         required: true
+    },
+    userEmail: {
+        type: String,
+        required: false
     }
 })
 
-module.exports = mongoose.model("Image", imageSchema)
+const Image = mongoose.model('Image', imageSchema);
+
+module.exports = Image;
