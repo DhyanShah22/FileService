@@ -8,6 +8,19 @@ const app = express()
 const userRoute = require('./Routes/userRoutes')
 const imageRoute = require('./Routes/imageRoutes')
 
+app.use((req, res, next) => {
+    const start = performance.now();
+  
+    // Your routes and other middleware go here
+  
+    const end = performance.now();
+    const responseTime = end - start;
+  
+    console.log(`Response time: ${responseTime}ms`);
+  
+    next();
+  });
+  
 app.use(express.json())
 app.use(helmet())
 
