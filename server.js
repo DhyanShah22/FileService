@@ -1,10 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
+const morgan = require('morgan')
 
 require('dotenv').config()
 
 const app = express()
+app.use(morgan('dev'))
+
 const userRoute = require('./Routes/userRoutes')
 const imageRoute = require('./Routes/imageRoutes')
 
